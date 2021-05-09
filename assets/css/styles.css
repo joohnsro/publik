@@ -1,0 +1,354 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#wpcontent {
+  color: #ffffff;
+  background-color: #0088f8;
+  padding: 20px;
+  height: 100%;
+}
+#wpcontent #wpbody-content {
+  padding: 0;
+}
+
+#wpfooter {
+  display: none;
+}
+
+#publik-plugin {
+  color: #ffffff;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+#publik-plugin .header {
+  flex: 1;
+  min-height: 100px;
+  max-height: 100px;
+}
+#publik-plugin .header h3 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+#publik-plugin .header .btn-send {
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 6px 14px;
+  background-color: #0088f8;
+  border: 2px solid #ffffff;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  margin-left: 40px;
+  cursor: pointer;
+}
+#publik-plugin .header .btn-send:hover {
+  background-color: #0069be;
+}
+#publik-plugin #post-list {
+  flex: 1;
+  min-height: 45vh;
+  max-height: 45vh;
+  list-style: none;
+  padding: 0;
+  margin: 40px 0;
+  color: #444444;
+  background-color: #efefef;
+  display: flex;
+  flex-direction: column;
+}
+#publik-plugin #post-list li.label {
+  font-weight: bold;
+}
+#publik-plugin #post-list li.empty {
+  flex: 1;
+  min-height: 100%;
+  max-height: 100%;
+  border-bottom: none;
+  text-align: center;
+}
+#publik-plugin #post-list li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #cccccc;
+  transition: background-color 0.2s;
+}
+#publik-plugin #post-list li:not(.label, .empty):hover {
+  background-color: #dedede;
+}
+#publik-plugin #post-list li .title {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 20px;
+}
+#publik-plugin #post-list li .author,
+#publik-plugin #post-list li .schedule {
+  flex: 1;
+  max-width: 200px;
+  text-align: center;
+  padding: 20px;
+}
+#publik-plugin #post-list li .remove {
+  flex: 1;
+  max-width: 150px;
+  text-align: center;
+  padding: 5px;
+}
+#publik-plugin #post-list li .remove button {
+  color: red;
+  font-size: 1.4em;
+  padding: 4px 10px 6px 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+#publik-plugin .action {
+  flex: 1;
+  min-height: 80px;
+  max-height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#publik-plugin .action .btn-send {
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 17px;
+  margin-right: 20px;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+#publik-plugin .action .btn-send:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#publik-plugin .action .btn-send:disabled {
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: not-allowed;
+}
+#publik-plugin #publik-lightbox {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 40px;
+  display: none !important;
+  justify-content: center;
+  align-items: center;
+}
+#publik-plugin #publik-lightbox.opened {
+  display: flex !important;
+}
+#publik-plugin #publik-lightbox .publish-content {
+  flex: 1;
+  width: 80%;
+  max-width: 80%;
+  height: 80%;
+  background-color: #ffffff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: #888888;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+#publik-plugin #publik-lightbox .publish-content .header {
+  flex: 1;
+  max-height: 80px;
+  border-bottom: 1px solid #cccccc;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+#publik-plugin #publik-lightbox .publish-content .header .title {
+  color: #444444;
+  font-weight: bold;
+}
+#publik-plugin #publik-lightbox .publish-content .header .close button {
+  color: red;
+  font-size: 1.4em;
+  padding: 4px 10px 6px 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+#publik-plugin #publik-lightbox .publish-content .content {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+  overflow: auto;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column {
+  flex: 1;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column:first-child {
+  margin-right: 20px;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field.field-error label {
+  color: red;
+  font-weight: bold;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field.field-error label:after {
+  content: " - Campo obrigatório";
+  display: inline;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field.field-error input, #publik-plugin #publik-lightbox .publish-content .content .column .input-field.field-error textarea, #publik-plugin #publik-lightbox .publish-content .content .column .input-field.field-error select, #publik-plugin #publik-lightbox .publish-content .content .column .input-field.field-error .wp-editor-wrap {
+  border: 2px solid red;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field.checkbox {
+  margin-bottom: 10px;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field.checkbox label {
+  display: flex;
+  align-items: center;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field.checkbox label input {
+  margin-right: 20px;
+  width: 16px;
+  height: 16px;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field.checkbox.social {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field.checkbox.social label:first-child {
+  width: 100%;
+  margin-bottom: 10px;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field.checkbox.social label {
+  width: 50%;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field.checkbox.social label input {
+  margin-right: 10px;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field.schedule {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field.schedule label {
+  margin-right: 20px;
+  margin-bottom: 0;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field#no-automatic {
+  display: none;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field#no-automatic.visible {
+  display: flex;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field label {
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field input {
+  color: #666666;
+  height: 40px;
+  border: 1px solid #cccccc;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field textarea {
+  color: #666666;
+  border: 1px solid #cccccc;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field select {
+  color: #666666;
+  border: 1px solid #cccccc;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field .btn {
+  color: #ffffff;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 17px;
+  margin-left: 20px;
+  background-color: #0088f8;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.2s;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field .btn:hover {
+  background-color: #0069be;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field.inline-button {
+  flex-direction: row;
+  align-items: center;
+}
+#publik-plugin #publik-lightbox .publish-content .content .column .input-field.inline-button label {
+  margin-bottom: 0;
+}
+@media (max-width: 1024px) {
+  #publik-plugin #publik-lightbox .publish-content .content {
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+}
+#publik-plugin #publik-lightbox .publish-content .footer {
+  flex: 1;
+  max-height: 80px;
+  border-top: 1px solid #cccccc;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px;
+}
+#publik-plugin #publik-lightbox .publish-content .footer .btn-send {
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 17px;
+  background-color: #0088f8;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+#publik-plugin #publik-lightbox .publish-content .footer .btn-send:hover {
+  background-color: #0069be;
+}
+@media (max-width: 1024px) {
+  #publik-plugin #publik-lightbox {
+    padding: 10px;
+  }
+  #publik-plugin #publik-lightbox .publish-content {
+    width: 90%;
+    max-width: 90%;
+    height: 80%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

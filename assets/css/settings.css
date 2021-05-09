@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#wpcontent {
+  color: #ffffff;
+  background-color: #0088f8;
+  padding: 20px;
+  height: 100%;
+}
+#wpcontent #wpbody-content {
+  padding: 0;
+}
+
+#wpfooter {
+  display: none;
+}
+
+#publik-plugin {
+  color: #ffffff;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+#publik-plugin .header {
+  flex: 1;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 20px;
+}
+#publik-plugin .header h3 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+#publik-plugin .btn-send,
+#publik-plugin .social-login {
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 17px;
+  margin-top: 40px;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+#publik-plugin .btn-send:hover,
+#publik-plugin .social-login:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#publik-plugin .social-login {
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#publik-plugin .social-login:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#publik-plugin .content h4 {
+  margin-top: 40px;
+}
+#publik-plugin .content .input-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+#publik-plugin .content .input-field label {
+  min-width: 200px;
+}
+#publik-plugin .content .input-field input {
+  min-width: 400px;
+}
+
+/*# sourceMappingURL=settings.css.map */
